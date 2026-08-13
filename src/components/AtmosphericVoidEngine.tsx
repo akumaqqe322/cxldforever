@@ -108,10 +108,16 @@ export const AtmosphericVoidEngine: React.FC = () => {
       };
     };
 
-    // Spawn 14 Foreground Bokeh, 50 Midground Embers, 65 Background Dust particles (~130 total)
-    for (let i = 0; i < 14; i++) particles.push(createParticle('foreground', true));
-    for (let i = 0; i < 50; i++) particles.push(createParticle('midground', true));
-    for (let i = 0; i < 65; i++) particles.push(createParticle('background', true));
+    const isMobile = window.innerWidth < 768;
+
+    // Responsive Particle Budget: 38 particles on mobile (saves battery & locks 60 FPS), 129 on desktop
+    const foregroundCount = isMobile ? 4 : 14;
+    const midgroundCount = isMobile ? 16 : 50;
+    const backgroundCount = isMobile ? 18 : 65;
+
+    for (let i = 0; i < foregroundCount; i++) particles.push(createParticle('foreground', true));
+    for (let i = 0; i < midgroundCount; i++) particles.push(createParticle('midground', true));
+    for (let i = 0; i < backgroundCount; i++) particles.push(createParticle('background', true));
 
     let time = 0;
 
