@@ -1,0 +1,6 @@
+{
+  "name": "cxldforever",
+  "description": "Cyberpunk dark glassmorphism bio-link card with cinematic splash transition and interactive social links",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
