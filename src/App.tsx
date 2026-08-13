@@ -28,6 +28,13 @@ import { useLanyard } from './hooks/useLanyard';
 import { AtmosphericVoidEngine } from './components/AtmosphericVoidEngine';
 import { MadaraEMS } from './components/MadaraEMS';
 
+// Direct static asset imports from root (Vite bundles and optimizes these for Netlify)
+import garouImg from '../garou.jpg';
+import igrisImg from '../igris.png';
+import spotifyImg from '../spotifyart.png';
+import milestonesImg from '../milestonesart.png';
+import hardwareImg from '../hardwareart.png';
+
 // Discord ID for Lanyard Presence
 const DISCORD_USER_ID = '373840651600789504';
 
@@ -424,12 +431,15 @@ export default function App() {
                 >
                   {/* Aesthetic Spotify Artwork Background with Gradient Mask */}
                   <img 
-                    src="/spotifyart.png" 
-                    alt="Spotify Aesthetic Art" 
-                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700 select-none" 
+                    src={spotifyImg} 
+                    alt="Spotify Art" 
+                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-35 group-hover:scale-105 group-hover:opacity-55 transition-all duration-700 select-none" 
                     style={{ 
                       maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)', 
                       WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)' 
+                    }} 
+                    onError={(e) => { 
+                      e.currentTarget.style.display = 'none'; 
                     }} 
                   />
 
@@ -526,12 +536,15 @@ export default function App() {
                 >
                   {/* Milestones Artwork Background with Clean Standard Mask & Fit */}
                   <img 
-                    src="/milestonesart.png" 
+                    src={milestonesImg} 
                     alt="Milestones Art" 
-                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700 select-none" 
+                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-35 group-hover:scale-105 group-hover:opacity-55 transition-all duration-700 select-none" 
                     style={{ 
                       maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)', 
                       WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)' 
+                    }} 
+                    onError={(e) => { 
+                      e.currentTarget.style.display = 'none'; 
                     }} 
                   />
 
@@ -577,12 +590,15 @@ export default function App() {
                 >
                   {/* Hardware Artwork Background with Clean Standard Mask & Fit */}
                   <img 
-                    src="/hardwareart.png" 
+                    src={hardwareImg} 
                     alt="Hardware Art" 
-                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700 select-none" 
+                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-35 group-hover:scale-105 group-hover:opacity-55 transition-all duration-700 select-none" 
                     style={{ 
                       maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)', 
                       WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)' 
+                    }} 
+                    onError={(e) => { 
+                      e.currentTarget.style.display = 'none'; 
                     }} 
                   />
 
@@ -663,15 +679,15 @@ export default function App() {
                 >
                   {/* Real Garou Cosmic Artwork with Gradient Fade Mask */}
                   <img
-                    src="/garou.png"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/garou.jpg';
-                    }}
+                    src={garouImg}
                     alt="Garou"
-                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 group-hover:scale-105 transition-transform duration-700 select-none"
+                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700 select-none"
                     style={{
-                      maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 20%, transparent 95%)',
-                      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 20%, transparent 95%)',
+                      maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)',
+                      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)',
+                    }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
                     }}
                   />
 
@@ -740,15 +756,15 @@ export default function App() {
                 >
                   {/* Real Igris Shadow Domain Artwork with Gradient Fade Mask */}
                   <img
-                    src="/igris.png"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/igris.jpg';
-                    }}
+                    src={igrisImg}
                     alt="Igris"
-                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 group-hover:scale-105 transition-transform duration-700 select-none"
+                    className="absolute right-0 bottom-0 top-0 w-1/2 h-full object-cover object-center pointer-events-none z-0 opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700 select-none"
                     style={{
-                      maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 20%, transparent 95%)',
-                      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 20%, transparent 95%)',
+                      maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)',
+                      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 15%, transparent 95%)',
+                    }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
                     }}
                   />
 
